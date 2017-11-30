@@ -8,31 +8,17 @@
   <title>{% block title%}{% endblock %} - Classics Data</title>
   </head>
   <body>
-	  	  <nav class="navbar navbar-inverse">
+	  <nav class="navbar navbar-inverse">
 		  <div class="container-fluid">
 			  <div class="navbar-header">
 				  <a class="navbar-brand" href="."> Classics Data </a>
 			  </div>
-			  <ul class="nav navbar-nav">
+			<ul class="nav navbar-nav">
 				  <li {% if active_tab == "home" %} class="active" {% endif %}><a href=".">Home</a></li>
-				  <li {% if active_tab == "temp" %} class="active" {% endif %}><a href = ".">Data by Book
-				  <li {% if active_tab == "vol" %} class="dropdown active" {% else %} class = "dropdown" {% endif %}>
-					  <a class="dropdown-toggle" data-toggle="dropdown">Data by Genre
-						  <span class="caret"></span></a>
-					  <ul class="dropdown-menu">
-					  </ul>
-				  </li>
-				  <li>
-				  <li {% if active_tab == "length" %} class="dropdown active" {% else %} class = "dropdown" {% endif %}>
-					  <a class="dropdown-toggle" data-toggle="dropdown">Data by Reading Level
-						  <span class="caret"></span></a>
-					  <ul class="dropdown-menu">
-<!-- 						  <li {% if active_page == "fti" %} class = "active" {% endif %}><a href="fti">Feet to Inches</a></li>
-						  <li {% if active_page == "itf" %} class = "active" {% endif %}><a href="itf">Inches to Feet</a></li> -->
-					  </ul>
-				  </li>
-				  </li>
-			  </ul>
+				  <li {% if active_tab == "temp" %} class="active" {% endif %}><a href=".">Data by Book</a></li>
+				  <li {% if active_tab == "voll" %} class="active" {% endif %}><a href=".">Data by Genre</a></li>
+				  <li {% if active_tab == "length" %} class="active"{% endif %}><a href=".">>Data by Reading Level</a></li>
+			</ul>
 		  </div>
 	  </nav>
     
