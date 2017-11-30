@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  
-  <head>
-    <title>Classic Literature Data</title>
-  </head>
-  
-  <body>
-    <h1> Classic Literature Data </h1>
-    <p> Test! </p>
-  </body>
-  
-</html>
+{% extends "layout.html" %}
+{% set active_tab = "home" %}
 
+{% block title %}Classic Literature Data{% endblock %}
+
+{% block content %}
+<h1>Classic Literature Data</h1>
+<p> Test! </p>
+
+{% endblock %}
