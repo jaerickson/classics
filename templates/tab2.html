@@ -1,1 +1,23 @@
+{% extends "layout.html" %}
+{% set active_tab = "home" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Classic Literature Data</h1>
+<p> The data on this webpage is provided by the Classics JSON Library of the CORGIS Dataset Project. 
+  It contains information about the 1000 most popular books by download on Project Gutenburg. 
+  Project Gutenburg is a digital library of over 56,000 ebooks that have fallen into the public domain. 
+  Created by Michael S. Hart in 1971, it is the oldest digital library.</p>
+<br>
+<p> Data about these novels is available by title, genre, and reading level. 
+  Genre is displayed using the Library of Congress Classification System. 
+  Reading level is displayed by grade (1 = 1st Grade, etc). Books are provided based on the selected reading level using an average of the Coleman Liau Index, Gunning Fog System, 
+  Automated Readability Index, and Flesch-Kincaid Grade Level of each book. The Coleman Liau Index, Gunning Fog System, 
+  Automated Readability Index, and Flesch-Kincaid Grade Level all measure the years of formal education 
+  needed to read and understand a work. </p>
+  
+  
+
+{% endblock %}
 
