@@ -4,13 +4,25 @@ import os
 
 app = Flask(__name__)
 
+def get_title_options():
+    with open('classics.json') as classics_data:
+        classics = json.load(classics_data)
+    titles = []
+    for t in classics:
+        if t["title"] not in titles:
+            titles.append(t["title"])
+    options = ""
+    for o in titles:
+        options += Markup("<option value=\"" + o + "\">" + o + "</option>")
+    return options
+
 @app.route("/")
 def render_main():
         return render_template('home.html')
 
 @app.route("/bytitle")
 def render_t1():
-        return render_template('tab1.html')
+        return render_template('tab1.html', options = get_title_options())
 
 @app.route("/bygenre")
 def render_t2():
