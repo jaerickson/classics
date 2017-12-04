@@ -11,6 +11,8 @@ def get_title_options():
     for t in classics:
         if t["bibliography"]["title"] not in titles:
             titles.append(t["bibliography"]["title"])
+    for i in titles:
+        i = i[:20]
     options = ""
     for o in titles:
         options += Markup("<option value=\"" + o + "\">" + o + "</option>")
