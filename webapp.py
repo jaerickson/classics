@@ -12,7 +12,7 @@ def get_title_options():
         if t["bibliography"]["title"] not in titles and len(t["bibliography"]["title"]) < 40:
             titles.append(t["bibliography"]["title"])
         if t["bibliography"]["title"] not in titles and len(t["bibliography"]["title"]) > 40:
-            titles.append(t["bibliography"]["title"][:75] + "...")
+            titles.append(t["bibliography"]["title"][:40] + "...")
     options = ""
     for o in titles:
         options += Markup("<option value=\"" + o + "\">" + o + "</option>")
