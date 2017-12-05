@@ -9,10 +9,10 @@ def get_title_options():
         classics = json.load(classics_data)
     titles = []
     for t in classics:
-        if t["bibliography"]["title"] not in titles and len(t["bibliography"]["title"]) < 40:
+        if t["bibliography"]["title"] not in titles and len(t["bibliography"]["title"]) < 80:
             titles.append(t["bibliography"]["title"])
-        if t["bibliography"]["title"] not in titles and len(t["bibliography"]["title"]) > 40:
-            titles.append(t["bibliography"]["title"][:40] + "...")
+        if t["bibliography"]["title"] not in titles and len(t["bibliography"]["title"]) > 80:
+            titles.append(textwrap.shorten(t["bibliography"]["title"], width=80, placeholder="..."))
     options = ""
     for o in titles:
         options += Markup("<option value=\"" + o + "\">" + o + "</option>")
