@@ -18,12 +18,24 @@ def get_title_options():
         options += Markup("<option value=\"" + o + "\">" + o + "</option>")
     return options
 
+def get_title_data(title):
+    with open('classics.json') as classics_data:
+        classics = json.load(classics_data)
+    t = ""
+    for x in classics:
+        t = title
+    return t
+
+
 @app.route("/")
 def render_main():
         return render_template('home.html')
 
 @app.route("/bytitle")
 def render_t1():
+    if 'title' in request.args:
+        return render_template('tab1.html', options = get_title_options(), data = get_title_data(request.args['title']))
+    else:
         return render_template('tab1.html', options = get_title_options())
 
 @app.route("/bygenre")
