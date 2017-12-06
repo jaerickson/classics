@@ -21,6 +21,7 @@ def get_title_options():
 def get_title_data(title, info):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
+    b = ""
     for i in classics:
         if i == title:
             b = i["metrics"]["difficulty"]["flesch reading ease"]
