@@ -34,7 +34,7 @@ def render_main():
 @app.route("/bytitle")
 def render_t1():
     if 'title' in request.args:
-        return render_template('tab1.html', options = get_title_options(), data = get_title_data(request.args['title']))
+        return render_template('tab1.html', options = get_title_options(), data = get_title_data(request.args['title'], request.args['info']))
     else:
         return render_template('tab1.html', options = get_title_options())
 
