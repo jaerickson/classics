@@ -23,7 +23,7 @@ def get_title_data(title, info):
         classics = json.load(classics_data)
     b = ""
     for i in classics:
-        if i == title:
+        if i["bibliography"]["title"] == title:
             b = i["metrics"]["difficulty"]["flesch reading ease"]
     return b
 
