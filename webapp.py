@@ -34,7 +34,7 @@ def get_title_data(title, info):
                     i = "Statistics Information"
                 if info == "sentiments":
                     i = "Sentiments Information"
-             if info == "publication" or info == "author" or info == "subjects" or info == "congress classifications":
+             else:
                 b = str(n["bibliography"][info])
                 if info == "publication":
                     i = "Publication Information"
