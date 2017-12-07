@@ -27,7 +27,7 @@ def get_title_data(title, info):
     for n in classics:
         if n["bibliography"]["title"] == title:
             if info == "difficulty" or info == "statistics" or info == "sentiments":
-                b = str(n["metrics"][info])
+                b = n["metrics"][info]
                 if info == "difficulty":
                     i = "Reading Difficulty Information"
                 if info == "statistics":
@@ -35,7 +35,7 @@ def get_title_data(title, info):
                 if info == "sentiments":
                     i = "Sentiments Information"
              else:
-                b = str(n["bibliography"][info])
+                b = n["bibliography"][info]
                 if info == "publication":
                     i = "Publication Information"
                 if info == "author":
