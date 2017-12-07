@@ -27,7 +27,7 @@ def get_title_data(title, info):
         if i["bibliography"]["title"] == title:
             if info == "difficulty" or info == "statistics" or info == "sentiments":
                 b = i["metrics"][info]
-    return title b
+    return title + b
 
 
 @app.route("/")
