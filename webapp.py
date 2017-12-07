@@ -26,7 +26,7 @@ def get_title_data(title, info):
     for i in classics:
         if i["bibliography"]["title"] == title:
             if info == "difficulty" or info == "statistics" or info == "sentiments":
-                b = i["metrics"][info]
+                b = str(i["metrics"][info])
     return t + b
 
 
