@@ -26,9 +26,9 @@ def get_title_data(title, info):
     t = title
     for n in classics:
         if info == "difficulty" or info == "statistics" or info == "sentiments":
-             b = n["metrics"][info]
+             b = str(n["metrics"][info])
         if info == "publication" or info == "author" or info == "subjects" or info == "congress classifications":
-             b = n["bibliography"][info]
+             b = str(n["bibliography"][info])
     return t + " " + i + " " + b
 
 
