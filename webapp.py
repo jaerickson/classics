@@ -22,11 +22,12 @@ def get_title_data(title, info):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
     b = ""
+    t = title
     for i in classics:
         if i["bibliography"]["title"] == title:
             if info == "difficulty" or info == "statistics" or info == "sentiments":
                 b = i["metrics"][info]
-    return b
+    return title b
 
 
 @app.route("/")
