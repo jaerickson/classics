@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 {% set active_tab = "t2" %}
 
-{% block title %}Data by Genre{% endblock %}
+{% block title %}Data by Classification{% endblock %}
 
 {% block content %}
-<h1> Select a title to access data </h1>
-    <form action="/bygenre">
-      <select name="genre">
+<h1> Select a Congress Classification to access data </h1>
+    <form action="/byclass">
+      <select name="class">
           <option value="A">General Works</option>
           <option value="B">Philosophy, Psychology, Religion</option>
           <option value="C">Auxiliary Sciences of History (General)</option>
