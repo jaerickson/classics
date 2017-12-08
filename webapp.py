@@ -44,7 +44,7 @@ def render_t1():
     else:
         return render_template('tab1.html', options = get_title_options())
 
-@app.route("/bygenre")
+@app.route("/byclass")
 def render_t2():
         return render_template('tab2.html')
 
