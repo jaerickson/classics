@@ -30,8 +30,6 @@ def get_title_data(title, info):
                 b = str(n["metrics"][info])
             if info == "publication" or info == "author" or info == "subjects" or info == "congress classifications":
                 b = str(n["bibliography"][info])
-                if info == "publication":
-                    i = "Publication Information"
     return t + " " + i + " " + b
 
 def get_class_data(class):
