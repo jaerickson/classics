@@ -21,7 +21,7 @@ def get_title_options():
 def get_title_data(title, info):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
-    b = ""
+    b = " "
     i = info
     t = title
     for n in classics:
@@ -32,9 +32,9 @@ def get_title_data(title, info):
                 b = str(n["bibliography"][info])
     return t + " " + i + " " + b
 
-def get_class_data(class):
-    with open('classics.json') as classics_data:
-        classics = json.load(classics_data)
+# def get_class_data(class):
+#     with open('classics.json') as classics_data:
+#         classics = json.load(classics_data)
 
 
 
