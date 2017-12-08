@@ -4,20 +4,34 @@
 {% block title %}Data by Genre{% endblock %}
 
 {% block content %}
-<h1>Classic Literature Data</h1>
-<p> The data on this webpage is provided by the Classics JSON Library of the CORGIS Dataset Project. 
-  It contains information about the 1000 most popular books by download on Project Gutenburg. 
-  Project Gutenburg is a digital library of over 56,000 ebooks that have fallen into the public domain. 
-  Created by Michael S. Hart in 1971, it is the oldest digital library.</p>
-<br>
-<p> Data about these novels is available by title, genre, and reading level. 
-  Genre is displayed using the Library of Congress Classification System. 
-  Reading level is displayed by grade (1 = 1st Grade, etc). Books are provided based on the selected reading level using an average of the Coleman Liau Index, Gunning Fog System, 
-  Automated Readability Index, and Flesch-Kincaid Grade Level of each book. The Coleman Liau Index, Gunning Fog System, 
-  Automated Readability Index, and Flesch-Kincaid Grade Level all measure the years of formal education 
-  needed to read and understand a work. </p>
-  
-  
-
+<h1> Select a title to access data </h1>
+    <form action="/bygenre">
+      <select name="genre">
+          <option value="A">General Works</option>
+          <option value="B">Philosophy, Psychology, Religion</option>
+          <option value="C">Auxiliary Sciences of History (General)</option>
+          <option value="D">History (General) and History of Europe</option>
+          <option value="E">American and the United States History (general)</option>
+          <option value="F">United States (local) and America Outside of U.S. History</option>
+          <option value="G">Geography, Anthropology, Recreation</option>
+          <option value="H">Social Sciences</option>
+          <option value="J">Political Science</option>
+          <option value="K">Law</option>
+          <option value="L">Education</option>
+          <option value="M">Music</option>
+          <option value="N">Fine Arts</option>
+          <option value="P">Language and Literature</option>
+          <option value="Q">Science (General)</option>
+          <option value="R">Medicine</option>
+          <option value="S">Agriculture</option>
+          <option value="T">Technology</option>
+          <option value="U">Military Science</option>
+          <option value="V">Naval Science</option>
+          <option value="Z">Bibliography, Library Science, Information Resources</option>
+      </select>
+      <input type="submit">
+    </form>
+{{ data }}
 {% endblock %}
+
 
