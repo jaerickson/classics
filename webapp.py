@@ -49,9 +49,9 @@ def render_t1():
 
 @app.route("/byclass")
 def render_t2():
-        if 'class' in request.args:
-        return render_template('tab2.html', data = get_class_data(request.args['class']))
-    else:
+#         if 'class' in request.args:
+#         return render_template('tab2.html', data = get_class_data(request.args['class']))
+#     else:
         return render_template('tab2.html')
 
 @app.route("/bylevel")
