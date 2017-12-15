@@ -30,10 +30,9 @@ def get_title_data(title, info):
                 b = str(n["metrics"][info])
                 if info == "difficulty":
                     i = "Reading Difficulty Information:"
-                    b = "<h4> Flesch Reading Ease: " + str(n["metrics"]["difficulty"]["flesch reading ease"]) + "</h4>"
-#                     b = "<h4> Flesch Reading Ease: " + str(n["metrics"]["difficulty"]["flesch reading ease"]) +
-#                     "Automated Readability Index: " + str(n["metrics"]["difficulty"]["automated readability index"]) + 
-#                     "Coleman Liau Index: " + str(n["metrics"]["difficulty"]["coleman liau index"]) + 
+                    b = "<h4> Flesch Reading Ease: " + str(n["metrics"]["difficulty"]["flesch reading ease"]) +
+                    "Automated Readability Index: " + str(n["metrics"]["difficulty"]["automated readability index"]) + 
+                    "Coleman Liau Index: " + str(n["metrics"]["difficulty"]["coleman liau index"]) + "</h4>"
 #                     "Gunning Fog: " + str(n["metrics"]["difficulty"]["gunning fog"]) + 
 #                     "Linsear Write Formula: " + str(n["metrics"]["difficulty"]["linsear write formula"]) + 
 #                     "Dale Chall Readability Score: " + str(n["metrics"]["difficulty"]["dale chall readability score"]) + 
