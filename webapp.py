@@ -31,7 +31,7 @@ def get_title_data(title, info):
                     i = "Reading Difficulty Info"
             if info == "publication" or info == "author" or info == "subjects" or info == "congress classifications":
                 b = str(n["bibliography"][info])
-    return title + " " + info + " " + b
+    return title + " " + i + " " + b
 
 # def get_class_data(class):
 #     with open('classics.json') as classics_data:
