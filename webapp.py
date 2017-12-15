@@ -30,7 +30,7 @@ def get_title_data(title, info):
                 b = str(n["metrics"][info])
                 if info == "difficulty":
                     i = "Reading Difficulty Information:"
-                    b = Markup("<h4>" + str(n["metrics"][info]) + "</h4>")
+                    b = "<h4>" + str(n["metrics"][info]) + "</h4>"
                 if info == "statistics":
                     i = "Statistics Information:"
                 if info == "sentiments":
