@@ -30,14 +30,7 @@ def get_title_data(title, info):
                 b = str(n["metrics"][info])
                 if info == "difficulty":
                     i = "Reading Difficulty Information:"
-                    b = "<h4> Flesch Reading Ease: " + str(n["metrics"]["difficulty"]["flesch reading ease"]) + "Automated Readability Index: " + str(n["metrics"]["difficulty"]["automated readability index"]) + "</h4>"
-#                     "Coleman Liau Index: " + str(n["metrics"]["difficulty"]["coleman liau index"]) + "</h4>"
-#                     "Gunning Fog: " + str(n["metrics"]["difficulty"]["gunning fog"]) + 
-#                     "Linsear Write Formula: " + str(n["metrics"]["difficulty"]["linsear write formula"]) + 
-#                     "Dale Chall Readability Score: " + str(n["metrics"]["difficulty"]["dale chall readability score"]) + 
-#                     "Flesch Kincaid Grade: " + str(n["metrics"]["difficulty"]["flesch kincaid grade"]) + 
-#                     "Smog Index: " + str(n["metrics"]["difficulty"]["smog index"]) + 
-#                     "Difficult Words: " + str(n["metrics"]["difficulty"]["difficult words"]) + "</h4>"
+                    b = "<h4> Flesch Reading Ease: " + str(n["metrics"]["difficulty"]["flesch reading ease"]) + "<br> Automated Readability Index: " + str(n["metrics"]["difficulty"]["automated readability index"]) + "<br> Coleman Liau Index: " + str(n["metrics"]["difficulty"]["coleman liau index"]) + "<br> Gunning Fog: " + str(n["metrics"]["difficulty"]["gunning fog"]) + "<br> Linsear Write Formula: " + str(n["metrics"]["difficulty"]["linsear write formula"]) + "<br> Dale Chall Readability Score: " + str(n["metrics"]["difficulty"]["dale chall readability score"]) + "<br> Flesch Kincaid Grade: " + str(n["metrics"]["difficulty"]["flesch kincaid grade"]) + "<br> Smog Index: " + str(n["metrics"]["difficulty"]["smog index"]) + "<br> Difficult Words: " + str(n["metrics"]["difficulty"]["difficult words"]) + "</h4>"
                 if info == "statistics":
                     i = "Statistics Information:"
                 if info == "sentiments":
