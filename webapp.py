@@ -44,7 +44,7 @@ def get_title_data(title, info):
                     i = "Subjects Information:"
                 if info == "congress classifications":
                     i = "Congress Classification Information:"
-    d = Markup("<h2>" + title + " " + i + "</h2>" + "<h5>" + b + "</h5>")
+    d = Markup("<h3>" + title + " " + i + "</h3>" + "<h4>" + b + "</h4>")
     return d
 
 # def get_class_data(class):
