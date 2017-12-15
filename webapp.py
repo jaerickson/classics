@@ -22,15 +22,13 @@ def get_title_data(title, info):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
     b = " "
-    i = info
-    t = title
     for n in classics:
         if n["bibliography"]["title"] == title:
             if info == "difficulty" or info == "statistics" or info == "sentiments":
                 b = str(n["metrics"][info])
             if info == "publication" or info == "author" or info == "subjects" or info == "congress classifications":
                 b = str(n["bibliography"][info])
-    return t + " " + i + " " + b
+    return title + " " + info + " " + b
 
 # def get_class_data(class):
 #     with open('classics.json') as classics_data:
