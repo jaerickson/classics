@@ -30,6 +30,7 @@ def get_title_data(title, info):
                 b = str(n["metrics"][info])
                 if info == "difficulty":
                     i = "Reading Difficulty Information:"
+                    b = "<h4> Flesch Reading Ease: " + str(n["metrics"]["difficulty"]["flesch reading ease"]) + "</h4>"
 #                     b = "<h4> Flesch Reading Ease: " + str(n["metrics"]["difficulty"]["flesch reading ease"]) +
 #                     "Automated Readability Index: " + str(n["metrics"]["difficulty"]["automated readability index"]) + 
 #                     "Coleman Liau Index: " + str(n["metrics"]["difficulty"]["coleman liau index"]) + 
