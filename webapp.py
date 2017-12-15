@@ -23,6 +23,7 @@ def get_title_data(title, info):
         classics = json.load(classics_data)
     b = " "
     i = " "
+    d = " "
     for n in classics:
         if n["bibliography"]["title"] == title:
             if info == "difficulty" or info == "statistics" or info == "sentiments":
@@ -43,7 +44,8 @@ def get_title_data(title, info):
                     i = "Subjects Information:"
                 if info == "congress classifications":
                     i = "Congress Classification Information:"
-    return title + " " + i + " " + b
+    d = Markup("<h1>" + "title + " " + i + "</h1>" + "<p>" + b + "</p>")
+    return d
 
 # def get_class_data(class):
 #     with open('classics.json') as classics_data:
