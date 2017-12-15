@@ -28,21 +28,21 @@ def get_title_data(title, info):
             if info == "difficulty" or info == "statistics" or info == "sentiments":
                 b = str(n["metrics"][info])
                 if info == "difficulty":
-                    i = "Reading Difficulty Information"
+                    i = "Reading Difficulty Information:"
                 if info == "statistics":
-                    i = "Statistics Information"
+                    i = "Statistics Information:"
                 if info == "sentiments":
-                    i = "Sentiments Information"
+                    i = "Sentiments Information:"
             if info == "publication" or info == "author" or info == "subjects" or info == "congress classifications":
                 b = str(n["bibliography"][info])
                 if info == "publication":
-                    i = "Publication Information"
+                    i = "Publication Information:"
                 if info == "author":
-                    i = "Author Information"
+                    i = "Author Information:"
                 if info == "subjects":
-                    i = "Subjects Information"
+                    i = "Subjects Information:"
                 if info == "congress classifications":
-                    i = "Congress Classification Information"
+                    i = "Congress Classification Information:"
     return title + " " + i + " " + b
 
 # def get_class_data(class):
