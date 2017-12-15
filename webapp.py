@@ -36,6 +36,7 @@ def get_title_data(title, info):
                     b = "<h4> Polysyllables: " + str(n["metrics"]["statistics"]["polysyllables"]) + "<br> Characters: " + str(n["metrics"]["statistics"]["characters"]) + "<br> Average Sentence Length: " + str(n["metrics"]["statistics"]["average sentence length"]) + "<br> Words: " + str(n["metrics"]["statistics"]["words"]) + "<br> Sentences: " + str(n["metrics"]["statistics"]["sentences"]) + "<br> Syllables: " + str(n["metrics"]["statistics"]["syllables"]) + "<br> Average Sentence per Word: " + str(n["metrics"]["statistics"]["average sentence per word"]) + "<br> Average Letter per Word: " + str(n["metrics"]["statistics"]["average letter per word"]) + "</h4>"
                 if info == "sentiments":
                     i = "Sentiments Information:"
+                    b = "<h4> Polarity: " + str(n["metrics"]["sentiments"]["polarity"]) + "<br> Subjectivity: " + str(n["metrics"]["sentiments"]["subjectivity"]) + "</h4>"
             if info == "publication" or info == "author" or info == "subjects" or info == "congress classifications":
                 b = str(n["bibliography"][info])
                 if info == "publication":
