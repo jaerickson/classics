@@ -27,9 +27,10 @@ def get_title_data(title, info):
     for n in classics:
         if n["bibliography"]["title"] == title:
             if info == "difficulty" or info == "statistics" or info == "sentiments":
-                b = str(n["metrics"][info] + "h")
+                b = str(n["metrics"][info])
                 if info == "difficulty":
                     i = "Reading Difficulty Information:"
+                    b = Markup("<h4>" + str(n["metrics"][info]) + "</h4>")
                 if info == "statistics":
                     i = "Statistics Information:"
                 if info == "sentiments":
@@ -44,7 +45,7 @@ def get_title_data(title, info):
                     i = "Subjects Information:"
                 if info == "congress classifications":
                     i = "Congress Classification Information:"
-    d = Markup("<h3>" + title + " " + i + "</h3>" + "<h4>" + b + "</h4>")
+    d = Markup("<h3>" + title + " " + i + "</h3>" + b)
     return d
 
 # def get_class_data(class):
