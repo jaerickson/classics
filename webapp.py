@@ -25,9 +25,6 @@ def get_title_data(title, info):
     i = " "
     d = " "
     for n in classics:
-        if n["bibliography"]["title"] == title:
-            if info == "difficulty" or info == "statistics" or info == "sentiments":
-                b = str(n["metrics"][info])
                 if info == "difficulty":
                     i = "Reading Difficulty Information:"
                     b = "<h4> Flesch Reading Ease: " + str(n["metrics"]["difficulty"]["flesch reading ease"]) + "<br> Automated Readability Index: " + str(n["metrics"]["difficulty"]["automated readability index"]) + "<br> Coleman Liau Index: " + str(n["metrics"]["difficulty"]["coleman liau index"]) + "<br> Gunning Fog: " + str(n["metrics"]["difficulty"]["gunning fog"]) + "<br> Linsear Write Formula: " + str(n["metrics"]["difficulty"]["linsear write formula"]) + "<br> Dale Chall Readability Score: " + str(n["metrics"]["difficulty"]["dale chall readability score"]) + "<br> Flesch Kincaid Grade: " + str(n["metrics"]["difficulty"]["flesch kincaid grade"]) + "<br> Smog Index: " + str(n["metrics"]["difficulty"]["smog index"]) + "<br> Difficult Words: " + str(n["metrics"]["difficulty"]["difficult words"]) + "</h4>"
@@ -41,6 +38,7 @@ def get_title_data(title, info):
                 b = str(n["bibliography"][info])
                 if info == "publication":
                     i = "Publication Information:"
+                    b = "<h4> Date of Publication: " + str(n["bibliography"]["publication"]["month name"]) + " " + str(n["bibliography"]["publication"]["day"]) + ", " + str(n["bibliography"]["publication"]["year"]) + "</h4"
                 if info == "author":
                     i = "Author Information:"
                 if info == "subjects":
