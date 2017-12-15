@@ -42,6 +42,7 @@ def get_title_data(title, info):
                     b = "<h4> Date of Publication: " + str(n["bibliography"]["publication"]["month name"]) + " " + str(n["bibliography"]["publication"]["day"]) + ", " + str(n["bibliography"]["publication"]["year"]) + "</h4"
                 if info == "author":
                     i = "Author Information:"
+                    b = "<h4> Author Name: " + str(n["bibliography"]["author"]["name"]) + "<br> Birth: " + str(n["bibliography"]["author"]["birth"]) + "<br> Death: " + str(n["bibliography"]["author"]["death"]) + "</h4>"
                 if info == "subjects":
                     i = "Subjects Information:"
                 if info == "congress classifications":
