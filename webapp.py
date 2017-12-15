@@ -25,26 +25,26 @@ def get_title_data(title, info):
     i = " "
     d = " "
     for n in classics:
-                if info == "difficulty":
-                    i = "Reading Difficulty Information:"
-                    b = "<h4> Flesch Reading Ease: " + str(n["metrics"]["difficulty"]["flesch reading ease"]) + "<br> Automated Readability Index: " + str(n["metrics"]["difficulty"]["automated readability index"]) + "<br> Coleman Liau Index: " + str(n["metrics"]["difficulty"]["coleman liau index"]) + "<br> Gunning Fog: " + str(n["metrics"]["difficulty"]["gunning fog"]) + "<br> Linsear Write Formula: " + str(n["metrics"]["difficulty"]["linsear write formula"]) + "<br> Dale Chall Readability Score: " + str(n["metrics"]["difficulty"]["dale chall readability score"]) + "<br> Flesch Kincaid Grade: " + str(n["metrics"]["difficulty"]["flesch kincaid grade"]) + "<br> Smog Index: " + str(n["metrics"]["difficulty"]["smog index"]) + "<br> Difficult Words: " + str(n["metrics"]["difficulty"]["difficult words"]) + "</h4>"
-                if info == "statistics":
-                    i = "Statistics Information:"
-                    b = "<h4> Polysyllables: " + str(n["metrics"]["statistics"]["polysyllables"]) + "<br> Characters: " + str(n["metrics"]["statistics"]["characters"]) + "<br> Average Sentence Length: " + str(n["metrics"]["statistics"]["average sentence length"]) + "<br> Words: " + str(n["metrics"]["statistics"]["words"]) + "<br> Sentences: " + str(n["metrics"]["statistics"]["sentences"]) + "<br> Syllables: " + str(n["metrics"]["statistics"]["syllables"]) + "<br> Average Sentence per Word: " + str(n["metrics"]["statistics"]["average sentence per word"]) + "<br> Average Letter per Word: " + str(n["metrics"]["statistics"]["average letter per word"]) + "</h4>"
-                if info == "sentiments":
-                    i = "Sentiments Information:"
-                    b = "<h4> Polarity: " + str(n["metrics"]["sentiments"]["polarity"]) + "<br> Subjectivity: " + str(n["metrics"]["sentiments"]["subjectivity"]) + "</h4>"
-            if info == "publication" or info == "author" or info == "subjects" or info == "congress classifications":
-                b = str(n["bibliography"][info])
-                if info == "publication":
-                    i = "Publication Information:"
-                    b = "<h4> Date of Publication: " + str(n["bibliography"]["publication"]["month name"]) + " " + str(n["bibliography"]["publication"]["day"]) + ", " + str(n["bibliography"]["publication"]["year"]) + "</h4"
-                if info == "author":
-                    i = "Author Information:"
-                if info == "subjects":
-                    i = "Subjects Information:"
-                if info == "congress classifications":
-                    i = "Congress Classification Information:"
+        if info == "difficulty":
+            i = "Reading Difficulty Information:"
+            b = "<h4> Flesch Reading Ease: " + str(n["metrics"]["difficulty"]["flesch reading ease"]) + "<br> Automated Readability Index: " + str(n["metrics"]["difficulty"]["automated readability index"]) + "<br> Coleman Liau Index: " + str(n["metrics"]["difficulty"]["coleman liau index"]) + "<br> Gunning Fog: " + str(n["metrics"]["difficulty"]["gunning fog"]) + "<br> Linsear Write Formula: " + str(n["metrics"]["difficulty"]["linsear write formula"]) + "<br> Dale Chall Readability Score: " + str(n["metrics"]["difficulty"]["dale chall readability score"]) + "<br> Flesch Kincaid Grade: " + str(n["metrics"]["difficulty"]["flesch kincaid grade"]) + "<br> Smog Index: " + str(n["metrics"]["difficulty"]["smog index"]) + "<br> Difficult Words: " + str(n["metrics"]["difficulty"]["difficult words"]) + "</h4>"
+        if info == "statistics":
+            i = "Statistics Information:"
+            b = "<h4> Polysyllables: " + str(n["metrics"]["statistics"]["polysyllables"]) + "<br> Characters: " + str(n["metrics"]["statistics"]["characters"]) + "<br> Average Sentence Length: " + str(n["metrics"]["statistics"]["average sentence length"]) + "<br> Words: " + str(n["metrics"]["statistics"]["words"]) + "<br> Sentences: " + str(n["metrics"]["statistics"]["sentences"]) + "<br> Syllables: " + str(n["metrics"]["statistics"]["syllables"]) + "<br> Average Sentence per Word: " + str(n["metrics"]["statistics"]["average sentence per word"]) + "<br> Average Letter per Word: " + str(n["metrics"]["statistics"]["average letter per word"]) + "</h4>"
+        if info == "sentiments":
+            i = "Sentiments Information:"
+            b = "<h4> Polarity: " + str(n["metrics"]["sentiments"]["polarity"]) + "<br> Subjectivity: " + str(n["metrics"]["sentiments"]["subjectivity"]) + "</h4>"
+        if info == "publication" or info == "author" or info == "subjects" or info == "congress classifications":
+            b = str(n["bibliography"][info])
+            if info == "publication":
+                i = "Publication Information:"
+                b = "<h4> Date of Publication: " + str(n["bibliography"]["publication"]["month name"]) + " " + str(n["bibliography"]["publication"]["day"]) + ", " + str(n["bibliography"]["publication"]["year"]) + "</h4"
+            if info == "author":
+                i = "Author Information:"
+            if info == "subjects":
+                i = "Subjects Information:"
+            if info == "congress classifications":
+                i = "Congress Classification Information:"
     d = Markup("<h3>" + title + " " + i + "</h3>" + b)
     return d
 
