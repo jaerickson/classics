@@ -44,7 +44,7 @@ def get_title_data(title, info):
     d = Markup("<h3>" + title + " " + i + "</h3>" + b)
     return d
 
-# def get_class_data(class):
+# def get_genre_data(genre):
 #     with open('classics.json') as classics_data:
 #         classics = json.load(classics_data)
 
@@ -61,10 +61,10 @@ def render_t1():
     else:
         return render_template('tab1.html', options = get_title_options())
 
-@app.route("/byclass")
+@app.route("/bygenre")
 def render_t2():
 #         if 'class' in request.args:
-#         return render_template('tab2.html', data = get_class_data(request.args['class']))
+#         return render_template('tab2.html', data = get_genre_data(request.args['genre']))
 #     else:
         return render_template('tab2.html')
 
