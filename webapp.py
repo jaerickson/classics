@@ -52,10 +52,10 @@ def get_title_data(title, info):
 
 
 def get_level_options():
-    in = ""
+    n = ""
     for o in range(1, 12):
-            in += Markup("<option value=\"" + o + "\">" + o + "</option>")
-    return in
+            n += Markup("<option value=\"" + o + "\">" + o + "</option>")
+    return n
 
 
 
@@ -83,9 +83,9 @@ def render_t2():
 
 @app.route("/bylevel")
 def render_t3():
-    if 'level' in request.args:
-        return render_template('tab3.html', options = get_level_options(), data = get_title_data(request.args['level']))
-    else:
+#     if 'level' in request.args:
+#         return render_template('tab3.html', options = get_level_options(), data = get_title_data(request.args['level']))
+#     else:
         return render_template('tab3.html', options = get_level_options())
 
 
