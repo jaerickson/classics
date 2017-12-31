@@ -51,11 +51,11 @@ def get_title_data(title, info):
 
 
 
-def get_level_options(level):
+def get_level_options():
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
     for o in classics:
-        if o > (level-1) and o < (level+1):
+        if o <= 12:
             options += Markup("<option value=\"" + o + "\">" + o + "</option>")
     return options
 
