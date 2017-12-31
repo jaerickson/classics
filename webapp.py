@@ -50,6 +50,21 @@ def get_title_data(title, info):
 
 
 
+
+def get_level_options(level):
+    with open('classics.json') as classics_data:
+        classics = json.load(classics_data)
+    for o in classics:
+        if o > (level-1) and o < (level+1):
+            options += Markup("<option value=\"" + o + "\">" + o + "</option>")
+    return options
+
+
+
+
+
+
+
 @app.route("/")
 def render_main():
         return render_template('home.html')
@@ -70,7 +85,11 @@ def render_t2():
 
 @app.route("/bylevel")
 def render_t3():
-        return render_template('tab3.html')
+    if 'level' in request.args:
+        return render_template('tab3.html', options = get_level_options(), data = get_title_data(request.args['level']))
+    else:
+        return render_template('tab3.html', options = get_level_options())
+
 
 if __name__=="__main__":
     app.run(debug=False)
