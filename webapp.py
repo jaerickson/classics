@@ -52,7 +52,7 @@ def get_title_data(title, info):
 
 
 def get_level_options():
-    n = Markup("<option value= 0> Kindergarden </option>")
+    n = Markup("<option value= 0> Kindergarten </option>")
     for o in range(1, 13):
         i = "Grade " + str(o)
         e = str(o)
