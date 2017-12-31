@@ -52,9 +52,10 @@ def get_title_data(title, info):
 
 
 def get_level_options():
+    in = ""
     for o in range(1, 12):
-            options += Markup("<option value=\"" + o + "\">" + o + "</option>")
-    return options
+            in += Markup("<option value=\"" + o + "\">" + o + "</option>")
+    return in
 
 
 
