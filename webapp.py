@@ -54,7 +54,7 @@ def get_title_data(title, info):
 def get_level_options():
     n = ""
     for o in range(0, 13):
-        i = str(o)
+        i = "Grade " + str(o)
         n += Markup("<option value=\"" + i + "\">" + i + "</option>")
     return n
 
