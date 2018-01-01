@@ -48,9 +48,6 @@ def get_title_data(title, info):
 #     with open('classics.json') as classics_data:
 #         classics = json.load(classics_data)
 
-
-
-
 def get_level_options():
     n = Markup("<option value= 0> Kindergarten </option>")
     for o in range(1, 13):
@@ -59,11 +56,14 @@ def get_level_options():
         n += Markup("<option value=\"" + e + "\">" + i + "</option>")
     return n
 
-
-
-
-
-
+def get_level_data(level):
+    with open('classics.json') as classics_data:
+        classics = json.load(classics_data)
+    list = ""
+    for a in classics:
+        if ((a["metrics"]["automated readability index"]-1)+a["metrics"]["coleman liau index"]+a["metrics"]["gunning fog"]+a["metrics"]["flesch kincaid grade"])/4 > (level -1) and ((a["metrics"]["automated readability index"]-1)+a["metrics"]["coleman liau index"]+a["metrics"]["gunning fog"]+a["metrics"]["flesch kincaid grade"])/4 < (level + 1):
+            list += a["bibliography"]["title]
+    return list
 
 @app.route("/")
 def render_main():
@@ -85,9 +85,9 @@ def render_t2():
 
 @app.route("/bylevel")
 def render_t3():
-#     if 'level' in request.args:
-#         return render_template('tab3.html', options = get_level_options(), data = get_title_data(request.args['level']))
-#     else:
+    if 'level' in request.args:
+        return render_template('tab3.html', options = get_level_options(), data = get_title_data(request.args['level']))
+    else:
         return render_template('tab3.html', options = get_level_options())
 
 
