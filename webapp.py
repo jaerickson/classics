@@ -60,7 +60,7 @@ def get_level_data(level):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
     list = ""
-    if level == 5:
+    if int(level) == 5:
         list = "yes"
     else:
         list = "nope"
