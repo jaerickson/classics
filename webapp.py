@@ -60,7 +60,8 @@ def get_level_data(level):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
     list = ""
-    if int(level) == 5:
+    for a in classics:
+        if int(a["metrics"]["automated readability index"])-1 > int(level):
         list = "yes"
     else:
         list = "nope"
