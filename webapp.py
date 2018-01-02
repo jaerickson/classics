@@ -61,13 +61,13 @@ def get_level_data(level):
         classics = json.load(classics_data)
     list = ""
     for a in classics:
-        if int(a["metrics"]["automated readability index"])-1 > int(level):
+        if int(a["metrics"]["difficulty"]["automated readability index"])-1 > int(level):
         list = "yes"
     else:
         list = "nope"
 #     for a in classics:
-#         if int(a["metrics"]["automated readability index"])-1 > int(level):
-# #         +int(a["metrics"]["coleman liau index"])+int(a["metrics"]["gunning fog"])+int(a["metrics"]["flesch kincaid grade"]))/4 > (level -1) and ((a["metrics"]["automated readability index"]-1)+a["metrics"]["coleman liau index"]+a["metrics"]["gunning fog"]+a["metrics"]["flesch kincaid grade"])/4 < (level + 1):
+#         if int(a["metrics"]["difficulty"]["automated readability index"])-1 > int(level):
+# #         +int(a["metrics"]["difficulty"]["coleman liau index"])+int(a["metrics"]["difficulty"]["gunning fog"])+int(a["metrics"]["difficulty"]["flesch kincaid grade"]))/4 > (level -1) and ((a["metrics"]["difficulty"]["automated readability index"]-1)+a["metrics"]["difficulty"]["coleman liau index"]+a["metrics"]["difficulty"]["gunning fog"]+a["metrics"]["difficulty"]["flesch kincaid grade"])/4 < (level + 1):
 #             list += str(a["bibliography"]["title])
     return list
 
