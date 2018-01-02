@@ -60,11 +60,13 @@ def get_level_data(level):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
     list = "nope"
+    if level == 5:
+        list = "yes"
 #     for a in classics:
 #         if int(a["metrics"]["automated readability index"])-1 > int(level):
 # #         +int(a["metrics"]["coleman liau index"])+int(a["metrics"]["gunning fog"])+int(a["metrics"]["flesch kincaid grade"]))/4 > (level -1) and ((a["metrics"]["automated readability index"]-1)+a["metrics"]["coleman liau index"]+a["metrics"]["gunning fog"]+a["metrics"]["flesch kincaid grade"])/4 < (level + 1):
 #             list += str(a["bibliography"]["title])
-    return level
+    return list
 
 @app.route("/")
 def render_main():
