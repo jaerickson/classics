@@ -61,7 +61,7 @@ def get_level_data(level):
         classics = json.load(classics_data)
     list = ""
     for a in classics:
-        if a["metrics"]["automated readability index"]-1:
+        if a["metrics"]["automated readability index"]-1 > level:
 #         +int(a["metrics"]["coleman liau index"])+int(a["metrics"]["gunning fog"])+int(a["metrics"]["flesch kincaid grade"]))/4 > (level -1) and ((a["metrics"]["automated readability index"]-1)+a["metrics"]["coleman liau index"]+a["metrics"]["gunning fog"]+a["metrics"]["flesch kincaid grade"])/4 < (level + 1):
             list += a["bibliography"]["title]
     return list
