@@ -64,7 +64,7 @@ def get_level_data(level):
 #         if int(a["metrics"]["automated readability index"])-1 > int(level):
 # #         +int(a["metrics"]["coleman liau index"])+int(a["metrics"]["gunning fog"])+int(a["metrics"]["flesch kincaid grade"]))/4 > (level -1) and ((a["metrics"]["automated readability index"]-1)+a["metrics"]["coleman liau index"]+a["metrics"]["gunning fog"]+a["metrics"]["flesch kincaid grade"])/4 < (level + 1):
 #             list += str(a["bibliography"]["title])
-    return list
+    return level
 
 @app.route("/")
 def render_main():
