@@ -59,12 +59,12 @@ def get_level_options():
 def get_level_data(level):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
-    list = 8
-    for a in classics:
-        auto = [2]["metrics"]["difficulty"]["automated readability index"]-1
+    list = classics[2]["metrics"]["difficulty"]["automated readability index"]-1
+#     for a in classics:
+#         auto = classics[2]["metrics"]["difficulty"]["automated readability index"]-1
 #         if  > int(level):
 # #         +int(a["metrics"]["difficulty"]["coleman liau index"])+int(a["metrics"]["difficulty"]["gunning fog"])+int(a["metrics"]["difficulty"]["flesch kincaid grade"]))/4 > (level -1) and ((a["metrics"]["difficulty"]["automated readability index"]-1)+a["metrics"]["difficulty"]["coleman liau index"]+a["metrics"]["difficulty"]["gunning fog"]+a["metrics"]["difficulty"]["flesch kincaid grade"])/4 < (level + 1):
-    list = auto
+#     list = auto
     return list
 
 @app.route("/")
