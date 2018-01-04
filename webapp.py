@@ -64,15 +64,19 @@ def get_level_data(level):
     fog = 0
     flesch = 0
     avg = 0
+    mn = level -1
+    mx = level + 1
     lst = ""
+    ttl = ""
     for a in classics:
         auto = a["metrics"]["difficulty"]["automated readability index"]-1
         cole = a["metrics"]["difficulty"]["coleman liau index"]
         fog = a["metrics"]["difficulty"]["gunning fog"]
         flesch = a["metrics"]["difficulty"]["flesch kincaid grade"]
+        ttl = str(a["bibliography"]["title"])
         avg = (auto+cole+fog+flesch)/4
-            if  avg > level - 1 and avg < level + 1:
-                lst += a["bibliography"]["title"] + " "
+            if  avg > mn and avg < mx:
+                lst += ttl + " "
     return lst
 
 @app.route("/")
