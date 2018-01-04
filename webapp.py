@@ -59,7 +59,7 @@ def get_level_options():
 def get_level_data(level):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
-    list = (int(classics[2]["metrics"]["difficulty"]["automated readability index"])-1)
+    list = int(classics[2]["metrics"]["difficulty"]["automated readability index"])-1
 #     for a in classics:
 #         auto = classics[2]["metrics"]["difficulty"]["automated readability index"]-1
 #         if  > int(level):
