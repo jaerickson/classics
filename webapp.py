@@ -64,7 +64,7 @@ def get_level_data(level):
         auto = int(a["metrics"]["difficulty"]["automated readability index"])-1
 #         if  > int(level):
 # #         +int(a["metrics"]["difficulty"]["coleman liau index"])+int(a["metrics"]["difficulty"]["gunning fog"])+int(a["metrics"]["difficulty"]["flesch kincaid grade"]))/4 > (level -1) and ((a["metrics"]["difficulty"]["automated readability index"]-1)+a["metrics"]["difficulty"]["coleman liau index"]+a["metrics"]["difficulty"]["gunning fog"]+a["metrics"]["difficulty"]["flesch kincaid grade"])/4 < (level + 1):
-        list = auto
+    list = auto
     return list
 
 @app.route("/")
