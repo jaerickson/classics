@@ -23,10 +23,12 @@ def get_title_data(title, info):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
     i = str(info) + ":"
-    b = " "
-    d = " "
+    b = ""
+    d = ""
+    test = ""
     for n in classics:
         if n["bibliography"]["title"] == title:
+            test = n["bibliography"]["title"]
             if info == "Reading Difficulty Information":
                 b = "<h4> Flesch Reading Ease: " + str(n["metrics"]["difficulty"]["flesch reading ease"]) + "<br> Automated Readability Index: " + str(n["metrics"]["difficulty"]["automated readability index"]) + "<br> Coleman Liau Index: " + str(n["metrics"]["difficulty"]["coleman liau index"]) + "<br> Gunning Fog: " + str(n["metrics"]["difficulty"]["gunning fog"]) + "<br> Linsear Write Formula: " + str(n["metrics"]["difficulty"]["linsear write formula"]) + "<br> Dale Chall Readability Score: " + str(n["metrics"]["difficulty"]["dale chall readability score"]) + "<br> Flesch Kincaid Grade: " + str(n["metrics"]["difficulty"]["flesch kincaid grade"]) + "<br> Smog Index: " + str(n["metrics"]["difficulty"]["smog index"]) + "<br> Difficult Words: " + str(n["metrics"]["difficulty"]["difficult words"]) + "</h4>"
             if info == "Statistics Information":
@@ -41,7 +43,7 @@ def get_title_data(title, info):
                 b = "<h4> Subjects: " + str(n["bibliography"]["subjects"]) + "</h4>"
             if info == "Congress Classification Information":
                 b = "<h4> Congress Classifications: " + str(n["bibliography"]["congress classifications"]) + "</h4>"
-    d = Markup("<h3>" + title + " " + i + "</h3>" + b)
+    d = Markup("<h3>" + test + " " + i + "</h3>" + b)
     return d
 
 # def get_genre_data(genre):
