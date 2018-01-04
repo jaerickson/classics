@@ -61,7 +61,7 @@ def get_level_data(level):
         classics = json.load(classics_data)
     list = 8
     for a in classics:
-        auto = 2["metrics"]["difficulty"]["automated readability index"]-1
+        auto = [2]["metrics"]["difficulty"]["automated readability index"]-1
 #         if  > int(level):
 # #         +int(a["metrics"]["difficulty"]["coleman liau index"])+int(a["metrics"]["difficulty"]["gunning fog"])+int(a["metrics"]["difficulty"]["flesch kincaid grade"]))/4 > (level -1) and ((a["metrics"]["difficulty"]["automated readability index"]-1)+a["metrics"]["difficulty"]["coleman liau index"]+a["metrics"]["difficulty"]["gunning fog"]+a["metrics"]["difficulty"]["flesch kincaid grade"])/4 < (level + 1):
     list = auto
