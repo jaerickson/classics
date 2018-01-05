@@ -66,18 +66,18 @@ def get_level_data(level):
     avg = 0
     mn = int(level) -1
     mx = int(level) + 1
-    lst = ""
-    ttl = ""
+#     lst = ""
+#     ttl = ""
      for a in classics:
          auto = int(a["metrics"]["difficulty"]["automated readability index"])-1
          cole = int(a["metrics"]["difficulty"]["coleman liau index"])
          fog = int(a["metrics"]["difficulty"]["gunning fog"])
          flesch = int(a["metrics"]["difficulty"]["flesch kincaid grade"])
-         ttl = str(a["bibliography"]["title"])
-         avg = (auto+cole+fog+flesch)/4
-             if  avg > mn and avg < mx:
-                 lst += ttl + " "
-    return lst
+#          ttl = a["bibliography"]["title"]
+#          avg = (auto+cole+fog+flesch)/4
+#              if  avg > mn and avg < mx:
+#                  lst += ttl + " "
+    return auto
 
 @app.route("/")
 def render_main():
