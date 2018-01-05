@@ -64,7 +64,7 @@ def get_level_data(level):
 # #     fog = 0
 # #     flesch = 0
 # #     avg = 0
-    mn = level -1
+    mn = int(level) -1
 # #     mx = level + 1
 # #     lst = ""
 # #     ttl = ""
