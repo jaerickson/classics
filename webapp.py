@@ -64,20 +64,20 @@ def get_level_data(level):
     fog = 0
     flesch = 0
     avg = 0
-    mn = int(level) -1
-    mx = int(level) + 1
-#     lst = ""
-#     ttl = ""
-#      for a in classics:
-#          auto = int(classics[0]["metrics"]["difficulty"]["automated readability index"])-1
-#          cole = int(classics[0]["metrics"]["difficulty"]["coleman liau index"])
-#          fog = int(classics[0]["metrics"]["difficulty"]["gunning fog"])
-#          flesch = int(classics[0]["metrics"]["difficulty"]["flesch kincaid grade"])
-#          ttl = a["bibliography"]["title"]
-#          avg = (auto+cole+fog+flesch)/4
-#              if  avg > mn and avg < mx:
-#                  lst += ttl + " "
-    return auto
+    mn = int(int(level) -1)
+    mx = int(int(level) + 1)
+    lst = ""
+    ttl = ""
+     for a in classics:
+         auto = int(int(classics[0]["metrics"]["difficulty"]["automated readability index"])-1)
+         cole = int(int(classics[0]["metrics"]["difficulty"]["coleman liau index"]))
+         fog = int(int(classics[0]["metrics"]["difficulty"]["gunning fog"]))
+         flesch = int(int(classics[0]["metrics"]["difficulty"]["flesch kincaid grade"]))
+         ttl = a["bibliography"]["title"]
+         avg = int((auto+cole+fog+flesch)/4)
+             if  avg > mn and avg < mx:
+                 lst += ttl + " "
+    return lst
 
 @app.route("/")
 def render_main():
