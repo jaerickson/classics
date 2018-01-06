@@ -59,11 +59,11 @@ def get_level_options():
 def get_level_data(level):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
-#     auto = 0
-#     cole = 0
-#     fog = 0
-#     flesch = 0
-#     avg = 0
+    auto = 0
+    cole = 0
+    fog = 0
+    flesch = 0
+    avg = 0
     mn = int(level) -1
     mx = int(level) + 1
 #     lst = ""
@@ -77,7 +77,7 @@ def get_level_data(level):
 #          avg = (auto+cole+fog+flesch)/4
 #              if  avg > mn and avg < mx:
 #                  lst += ttl + " "
-    return mn
+    return auto
 
 @app.route("/")
 def render_main():
