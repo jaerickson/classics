@@ -82,6 +82,7 @@ def get_level_data(level):
     response = "<h4>" + lst + "</h4>"
     if lv == 0:
         grade = "Kindergarten"
+        response = "TEST"
     return Markup("<h3>" +  grade + " Reading Level: </h3>" + response)
 
 @app.route("/")
