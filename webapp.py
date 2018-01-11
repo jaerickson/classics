@@ -77,13 +77,11 @@ def get_level_data(level):
         avg = (int(auto) + int(cole) + int(fog) +int(flesch))/4
         if  int(avg) < int(level):
             lst += ttl + "<br>"
-        else:
-            lst = lst
     if lst == "":
         lst = "Sorry, no books in the database are in that reading level"
-    response = "<h4>" + lst + "</h4>"
     if int(level) == 0:
         grade = "Kindergarten"
+    response = "<h4>" + lst + "</h4>"
     return Markup("<h3>" +  grade + " Reading Level: </h3>" + response)
 
 @app.route("/")
