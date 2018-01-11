@@ -70,9 +70,9 @@ def get_level_data(level):
     response = ""
     for a in classics:
         auto = int(a["metrics"]["difficulty"]["automated readability index"])-1
-        cole = int(a[0]["metrics"]["difficulty"]["coleman liau index"])
-        fog = int(a[0]["metrics"]["difficulty"]["gunning fog"])
-        flesch = int(a[0]["metrics"]["difficulty"]["flesch kincaid grade"])
+        cole = int(a["metrics"]["difficulty"]["coleman liau index"])
+        fog = int(a["metrics"]["difficulty"]["gunning fog"])
+        flesch = int(a["metrics"]["difficulty"]["flesch kincaid grade"])
         ttl = a["bibliography"]["title"]
         avg = (int(auto) + int(cole) + int(fog) + int(flesch))/4
         if  int(avg) < int(level):
