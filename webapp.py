@@ -67,7 +67,7 @@ def get_level_data(level):
     lv = int(level)
     lst = ""
     ttl = ""
-    grade = ""
+    grade = "Grade " + str(level)
     for a in classics:
         auto = int(int(classics[0]["metrics"]["difficulty"]["automated readability index"])-1)
         cole = int(int(classics[0]["metrics"]["difficulty"]["coleman liau index"]))
@@ -82,8 +82,6 @@ def get_level_data(level):
     response = "<h4>" + lst + "</h4>"
     if level == 0:
         grade = "Kindergarten"
-    else:
-        grade = "Grade " + str(level)
     return Markup("<h3>" +  grade + " Reading Level: </h3>" + response)
 
 @app.route("/")
