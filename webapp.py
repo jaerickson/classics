@@ -64,24 +64,29 @@ def get_level_data(level):
     fog = 0
     flesch = 0
     avg = 0
-    lv = int(level)
     lst = ""
     ttl = ""
-    grade = "Grade " + str(level)
+    grade = ""
+    response = ""
     for a in classics:
         auto = int(a["metrics"]["difficulty"]["automated readability index"])-1
         cole = int(a[0]["metrics"]["difficulty"]["coleman liau index"])
         fog = int(a[0]["metrics"]["difficulty"]["gunning fog"])
         flesch = int(a[0]["metrics"]["difficulty"]["flesch kincaid grade"])
         ttl = a["bibliography"]["title"]
-        avg = (int(auto) + int(cole) + int(fog) +int(flesch))/4
+        avg = (int(auto) + int(cole) + int(fog) + int(flesch))/4
         if  int(avg) < int(level):
             lst += ttl + "<br>"
+        else:
+            lst = lst
     if lst == "":
-        lst = "Sorry, no books in the database are in that reading level"
+        response = "<h4> Sorry, no books in the database are in that reading level </h4>"
+    else:
+        response = "<h4>" + lst + "</h4>"
     if int(level) == 0:
         grade = "Kindergarten"
-    response = "<h4>" + lst + "</h4>"
+    else:
+        grade = "Grade " + str(level)
     return Markup("<h3>" +  grade + " Reading Level: </h3>" + response)
 
 @app.route("/")
