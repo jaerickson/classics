@@ -73,9 +73,8 @@ def get_level_data(level):
         cole = int(a[0]["metrics"]["difficulty"]["coleman liau index"])
         fog = int(a[0]["metrics"]["difficulty"]["gunning fog"])
         flesch = int(a[0]["metrics"]["difficulty"]["flesch kincaid grade"])
-        tst = int(a[0]["metrics"]["difficulty"]["smog index"])
         ttl = a["bibliography"]["title"]
-        avg = int((auto+cole+fog+flesch)/4)
+        avg = (int(auto) + int(cole) + int(fog) +int(flesch))/4
         if  int(avg) < int(level):
             lst += ttl + "<br>"
         else:
