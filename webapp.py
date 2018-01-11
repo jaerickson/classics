@@ -80,7 +80,7 @@ def get_level_data(level):
     if lst =="":
         lst = "Sorry, no books in the database are in that reading level"
     response = "<h4>" + lst + "</h4>"
-    if level == 0:
+    if lv == 0:
         grade = "Kindergarten"
     return Markup("<h3>" +  grade + " Reading Level: </h3>" + response)
 
