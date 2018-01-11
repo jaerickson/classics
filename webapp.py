@@ -75,11 +75,12 @@ def get_level_data(level):
         flesch = int(int(classics[0]["metrics"]["difficulty"]["flesch kincaid grade"]))
         ttl = a["bibliography"]["title"]
         avg = int((auto+cole+fog+flesch)/4)
-        if  avg < mx:
-            lst += ttl + " "
+        if  cole < mx:
+            lst += ttl + "<br>"
     if lst =="":
         lst = "Sorry, no books in the database are in that reading level"
-    return lst
+    response = "<h4>" + lst + "</h4>"
+    return Markup("<h3> Grade Level " + level + "</h3>" + response)
 
 @app.route("/")
 def render_main():
