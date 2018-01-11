@@ -69,14 +69,14 @@ def get_level_data(level):
     ttl = ""
     grade = "Grade " + str(level)
     for a in classics:
-        auto = int(classics[0]["metrics"]["difficulty"]["automated readability index"])-1
-        cole = int(classics[0]["metrics"]["difficulty"]["coleman liau index"])
-        fog = int(classics[0]["metrics"]["difficulty"]["gunning fog"])
-        flesch = int(classics[0]["metrics"]["difficulty"]["flesch kincaid grade"])
-        tst = int(classics[0]["metrics"]["difficulty"]["smog index"])
+        auto = int(a["metrics"]["difficulty"]["automated readability index"])-1
+        cole = int(a[0]["metrics"]["difficulty"]["coleman liau index"])
+        fog = int(a[0]["metrics"]["difficulty"]["gunning fog"])
+        flesch = int(a[0]["metrics"]["difficulty"]["flesch kincaid grade"])
+        tst = int(a[0]["metrics"]["difficulty"]["smog index"])
         ttl = a["bibliography"]["title"]
         avg = int((auto+cole+fog+flesch)/4)
-        if  int(auto) < int(level):
+        if  int(avg) < int(level):
             lst += ttl + "<br>"
         else:
             lst = lst
