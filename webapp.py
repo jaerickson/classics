@@ -76,7 +76,7 @@ def get_level_data(level):
         ttl = a["bibliography"]["title"]
         avg = int((auto+cole+fog+flesch)/4)
         if  avg < mx:
-            lst = ttl + " "
+            lst += ttl + " "
     if lst =="":
         lst = "Sorry, no books in the database are in that reading level"
     return lst
