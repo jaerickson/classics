@@ -76,7 +76,7 @@ def get_level_data(level):
         tst = int(classics[0]["metrics"]["difficulty"]["smog index"])
         ttl = a["bibliography"]["title"]
         avg = int((auto+cole+fog+flesch)/4)
-        if  int(tst) < int(level):
+        if  int(auto) < int(level):
             lst += ttl + "<br>"
         else:
             lst = lst
