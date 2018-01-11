@@ -84,7 +84,7 @@ def get_level_data(level):
         grade = "Kindergarten"
     else:
         grade = "Grade " + str(level)
-    return Markup("<h3>" +  grade + "Reading Level:"</h3>" + response)
+    return Markup("<h3>" +  grade + "Reading Level: </h3>" + response)
 
 @app.route("/")
 def render_main():
