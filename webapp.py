@@ -24,7 +24,7 @@ def get_title_data(title, info):
         classics = json.load(classics_data)
     i = str(info) + ":"
     b = ""
-    d = ""
+    data = ""
     for n in classics:
         if n["bibliography"]["title"] == title:
             if info == "Reading Difficulty Information":
@@ -41,20 +41,21 @@ def get_title_data(title, info):
                 b = "<h4> Subjects: " + str(n["bibliography"]["subjects"]) + "</h4>"
             if info == "Congress Classification Information":
                 b = "<h4> Congress Classifications: " + str(n["bibliography"]["congress classifications"]) + "</h4>"
-    d = Markup("<h3>" + title + " " + i + "</h3>" + b)
-    return d
+    data = Markup("<h3>" + title + " " + i + "</h3>" + b)
+    return data
 
 # def get_genre_data(genre):
 #     with open('classics.json') as classics_data:
 #         classics = json.load(classics_data)
+    
 
 def get_level_options():
     n = Markup("<option value= 0> Kindergarten </option>")
     for o in range(1, 13):
         i = "Grade " + str(o)
         e = str(o)
-        n += Markup("<option value=\"" + e + "\">" + i + "</option>")
-    return n
+        options += Markup("<option value=\"" + e + "\">" + i + "</option>")
+    return options
 
 def get_level_data(level):
     with open('classics.json') as classics_data:
@@ -68,6 +69,7 @@ def get_level_data(level):
     ttl = ""
     grade = ""
     response = ""
+    data = ""
     for a in classics:
         auto = int(a["metrics"]["difficulty"]["automated readability index"])-1
         cole = int(a["metrics"]["difficulty"]["coleman liau index"])
@@ -87,7 +89,8 @@ def get_level_data(level):
         grade = "Kindergarten"
     else:
         grade = "Grade " + str(level)
-    return Markup("<h3>" +  grade + " Reading Level: </h3>" + response)
+    data = Markup("<h3>" +  grade + " Reading Level: </h3>" + response)
+    return data
 
 @app.route("/")
 def render_main():
@@ -102,9 +105,9 @@ def render_t1():
 
 @app.route("/bygenre")
 def render_t2():
-#         if 'class' in request.args:
-#         return render_template('tab2.html', data = get_genre_data(request.args['genre']))
-#     else:
+    if 'genre' in request.args:
+        return render_template('tab2.html', data = get_genre_data(request.args['genre']))
+    else:
         return render_template('tab2.html')
 
 @app.route("/bylevel")
