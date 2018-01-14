@@ -47,7 +47,8 @@ def get_title_data(title, info):
 def get_genre_data(genre):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
-    data = len(classics[0]["bibliography"]["congress classifications"])
+        for a in range(0, len(classics[0]["bibliography"]["congress classifications"])):
+            data += a["bibliography"]["congress classifications"]
     return str(data)
     
 
