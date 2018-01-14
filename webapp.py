@@ -44,9 +44,11 @@ def get_title_data(title, info):
     data = Markup("<h3>" + title + " " + i + "</h3>" + b)
     return data
 
-# def get_genre_data(genre):
-#     with open('classics.json') as classics_data:
-#         classics = json.load(classics_data)
+def get_genre_data(genre):
+    with open('classics.json') as classics_data:
+        classics = json.load(classics_data)
+    data = len(classics["bibliography"]["congress classifications"])
+    return str(data)
     
 
 def get_level_options():
