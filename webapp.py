@@ -59,7 +59,7 @@ def get_genre_data(genre):
             else:
                 lst = lst
         if lst == "":
-            response = "<h4> Sorry, no books in the database are in that reading level </h4>"
+            response = "<h4> Sorry, no books in the database have that classification in the Library of Congress </h4>"
         else:
             response = "<h4>" + lst + "</h4>"
     data = Markup("<h3> Congress Classification " + genre[:-1] + ": </h3>" + response)
