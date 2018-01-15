@@ -47,21 +47,22 @@ def get_title_data(title, info):
 def get_genre_data(genre):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
-    lst = classics[0]["bibliography"]["congress classifications"][0][:1]
-    response = genre[-1:]
+    lst = ""
+    response = ""
     ttl = ""
     data = ""
-#     for a in classics:
-#         ttl = a["bibliography"]["title"]
-#         if a["bibliography"]["congress classifications"][0][:1] == genre[-1:]:
-#             lst += ttl + "<br>"
-#         else:
-#             lst = lst
-#     if lst == "":
-#         response = "<h4> Sorry, no books in the database are in that reading level </h4>"
-#     else:
-#         response = "<h4>" + lst + "</h4>"
-#     data = Markup("<h3> Congress Classification " + genre[:-1] + ": </h3>" + response)
+    for a in classics:
+        ttl = a["bibliography"]["title"]
+        if len(a["bibliography"]["congress classifications"]) > 1:
+            if a["bibliography"]["congress classifications"][0][:1] == genre[-1:]:
+                lst += ttl + "<br>"
+            else:
+                lst = lst
+        if lst == "":
+            response = "<h4> Sorry, no books in the database are in that reading level </h4>"
+        else:
+            response = "<h4>" + lst + "</h4>"
+    data = Markup("<h3> Congress Classification " + genre[:-1] + ": </h3>" + response)
     return lst + " " + response
     
 
