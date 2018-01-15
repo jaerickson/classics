@@ -116,23 +116,23 @@ def render_main():
 @app.route("/bygenre")
 def render_t1():
     if 'genre' in request.args:
-        return render_template('tab2.html', data = get_genre_data(request.args['genre']))
+        return render_template('tab1.html', data = get_genre_data(request.args['genre']))
     else:
-        return render_template('tab2.html')
+        return render_template('tab1.html')
     
 @app.route("/bylevel")
 def render_t2():
     if 'level' in request.args:
-        return render_template('tab3.html', options = get_level_options(), data = get_level_data(request.args['level']))
+        return render_template('tab2.html', options = get_level_options(), data = get_level_data(request.args['level']))
     else:
-        return render_template('tab3.html', options = get_level_options())
+        return render_template('tab2.html', options = get_level_options())
 
 @app.route("/bytitle")
 def render_t3():
     if 'title' in request.args:
-        return render_template('tab1.html', options = get_title_options(), data = get_title_data(request.args['title'], request.args['info']))
+        return render_template('tab3.html', options = get_title_options(), data = get_title_data(request.args['title'], request.args['info']))
     else:
-        return render_template('tab1.html', options = get_title_options())
+        return render_template('tab3.html', options = get_title_options())
 
 if __name__=="__main__":
     app.run(debug=False)
