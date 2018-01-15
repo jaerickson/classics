@@ -52,7 +52,7 @@ def get_genre_data(genre):
     response = ""
     ttl = ""
     classi = classics[0]["bibliography"]["congress classifications"][0]
-    data = classi[:2]
+    data = classi[1:]
 #     for a in classics:
 #         ttl = a["bibliography"]["title"]
 #         if a["bibliography"]["congress classifications"][:2] == test:
@@ -64,7 +64,7 @@ def get_genre_data(genre):
 #     else:
 #         response = "<h4>" + lst + "</h4>"
 #     data = Markup("<h3>" +  grade + " Reading Level: </h3>" + response)
-    return classi
+    return data
     
 
 def get_level_options():
