@@ -47,9 +47,23 @@ def get_title_data(title, info):
 def get_genre_data(genre):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
-        for a in range(0, len(classics[0]["bibliography"]["congress classifications"])):
-            data += a["bibliography"]["congress classifications"]
-    return str(data)
+    test = Markup("[" + genre)
+    lst = ""
+    response = ""
+    ttl = ""
+    data = genre[-1:]
+#     for a in classics:
+#         ttl = a["bibliography"]["title"]
+#         if a["bibliography"]["congress classifications"][:2] == test:
+#             lst += ttl + "<br>"
+#         else:
+#             lst = lst
+#     if lst == "":
+#         response = "<h4> Sorry, no books in the database are in that reading level </h4>"
+#     else:
+#         response = "<h4>" + lst + "</h4>"
+#     data = Markup("<h3>" +  grade + " Reading Level: </h3>" + response)
+    return data
     
 
 def get_level_options():
