@@ -47,7 +47,7 @@ def get_title_data(title, info):
 def get_genre_data(genre):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
-    lst = a["bibliography"]["congress classifications"][0][:1]
+    lst = classics[0]["bibliography"]["congress classifications"][0][:1]
     response = genre[-1:]
     ttl = ""
     data = ""
