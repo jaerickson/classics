@@ -51,7 +51,8 @@ def get_genre_data(genre):
     lst = ""
     response = ""
     ttl = ""
-    data = classics[0]["bibliography"]["congress classifications"]
+    class = classics[0]["bibliography"]["congress classifications"]
+    data = class[1:]
 #     for a in classics:
 #         ttl = a["bibliography"]["title"]
 #         if a["bibliography"]["congress classifications"][:2] == test:
