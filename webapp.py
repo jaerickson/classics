@@ -62,7 +62,7 @@ def get_genre_data(genre):
             response = "<h4> Sorry, no books in the database have that classification in the Library of Congress </h4>"
         else:
             response = "<h4>" + lst + "</h4>"
-    data = Markup("<h3> Congress Classification " + genre[:-1] + ": </h3>" + response)
+    data = Markup("<h3> Congress Classification " + genre[:-2] + ": </h3>" + response)
     return data
     
 
