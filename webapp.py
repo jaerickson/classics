@@ -47,11 +47,11 @@ def get_title_data(title, info):
 def get_genre_data(genre):
     with open('classics.json') as classics_data:
         classics = json.load(classics_data)
-    test = Markup("[" + genre)
+    test = Markup("[" + genre[-1:])
     lst = ""
     response = ""
     ttl = ""
-    data = genre[:-1]
+    data = classics[0]["bibliography"]["congress classifications"][:2]
 #     for a in classics:
 #         ttl = a["bibliography"]["title"]
 #         if a["bibliography"]["congress classifications"][:2] == test:
