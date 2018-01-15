@@ -63,7 +63,7 @@ def get_genre_data(genre):
         else:
             response = "<h4>" + lst + "</h4>"
     data = Markup("<h3> Congress Classification " + genre[:-1] + ": </h3>" + response)
-    return lst + " " + response
+    return data
     
 
 def get_level_options():
